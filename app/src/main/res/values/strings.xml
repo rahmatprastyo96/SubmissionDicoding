@@ -1,0 +1,24 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">GitHub</string>
+    <string name="detail_user">Detail User</string>
+    <string name="name" tools:keep="@string/name">Name</string>
+    <string name="search_user_here" tools:keep="@string/search_user_here">Search User Here ....</string>
+    <string name="not_found" tools:keep="@string/not_found">Please search for the user first …</string>
+    <string name="username">Username</string>
+    <string name="company" tools:keep="@string/company">Company</string>
+    <string name="location" tools:keep="@string/location">Location</string>
+    <string name="repository" tools:keep="@string/repository">Repository</string>
+    <string name="followers" tools:keep="@string/followers">Followers</string>
+    <string name="following" tools:keep="@string/following">Following</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="tab_text_1">Followers : </string>
+    <string name="tab_text_2">Following : </string>
+    <string name="splash" tools:keep="@string/splash">User\'s GitHub</string>
+    <string name="menu_favorite">Favorite</string>
+    <string name="favorite_user">User Favorite</string>
+    <string name="menu_settings">Settings</string>
+    <string name="dark_mode">Dark Mode</string>
+
+</resources>
