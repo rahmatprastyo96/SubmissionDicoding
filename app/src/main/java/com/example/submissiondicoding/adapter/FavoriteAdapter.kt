@@ -17,22 +17,6 @@ import java.util.ArrayList
 
 class FavoriteAdapter(private val listUser: ArrayList<UserFavorite>) : RecyclerView.Adapter<FavoriteAdapter.FavoriteViewHolder>() {
 
-    fun addItem(favorite: UserFavorite) {
-        this.listUser.add(favorite)
-        notifyItemInserted(this.listUser.size - 1)
-    }
-
-    fun updateItem(position: Int, favorite: UserFavorite) {
-        this.listUser[position] = favorite
-        notifyItemChanged(position, favorite)
-    }
-
-    fun removeItem(position: Int) {
-        this.listUser.removeAt(position)
-        notifyItemRemoved(position)
-        notifyItemRangeChanged(position, this.listUser.size)
-    }
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FavoriteViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_row_user, parent, false)
         return FavoriteViewHolder(view)

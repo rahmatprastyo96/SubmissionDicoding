@@ -6,16 +6,18 @@
         <entry key="..\:/Users/Rahmat Prastyo/AndroidStudioProjects/SubmissionDicoding/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
         <entry key="..\:/Users/Rahmat Prastyo/AndroidStudioProjects/SubmissionDicoding/app/src/main/res/drawable/ic_add.xml" value="0.1" />
         <entry key="..\:/Users/Rahmat Prastyo/AndroidStudioProjects/SubmissionDicoding/app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.1" />
+        <entry key="..\:/Users/Rahmat Prastyo/AndroidStudioProjects/SubmissionDicoding/app/src/main/res/drawable/ic_dangerous.xml" value="0.1" />
         <entry key="..\:/Users/Rahmat Prastyo/AndroidStudioProjects/SubmissionDicoding/app/src/main/res/drawable/ic_favorite_border.xml" value="0.1" />
         <entry key="..\:/Users/Rahmat Prastyo/AndroidStudioProjects/SubmissionDicoding/app/src/main/res/drawable/ic_favorite_white.xml" value="0.1" />
         <entry key="..\:/Users/Rahmat Prastyo/AndroidStudioProjects/SubmissionDicoding/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="..\:/Users/Rahmat Prastyo/AndroidStudioProjects/SubmissionDicoding/app/src/main/res/drawable/ic_search.xml" value="0.14635416666666667" />
         <entry key="..\:/Users/Rahmat Prastyo/AndroidStudioProjects/SubmissionDicoding/app/src/main/res/layout/activity_detail_user.xml" value="0.2" />
-        <entry key="..\:/Users/Rahmat Prastyo/AndroidStudioProjects/SubmissionDicoding/app/src/main/res/layout/activity_favorite.xml" value="0.18958333333333333" />
-        <entry key="..\:/Users/Rahmat Prastyo/AndroidStudioProjects/SubmissionDicoding/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/Rahmat Prastyo/AndroidStudioProjects/SubmissionDicoding/app/src/main/res/layout/activity_favorite.xml" value="0.1" />
+        <entry key="..\:/Users/Rahmat Prastyo/AndroidStudioProjects/SubmissionDicoding/app/src/main/res/layout/activity_main.xml" value="0.136" />
         <entry key="..\:/Users/Rahmat Prastyo/AndroidStudioProjects/SubmissionDicoding/app/src/main/res/layout/activity_settings.xml" value="0.264" />
         <entry key="..\:/Users/Rahmat Prastyo/AndroidStudioProjects/SubmissionDicoding/app/src/main/res/layout/activity_splash.xml" value="0.1" />
-        <entry key="..\:/Users/Rahmat Prastyo/AndroidStudioProjects/SubmissionDicoding/app/src/main/res/layout/empty_user.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/Rahmat Prastyo/AndroidStudioProjects/SubmissionDicoding/app/src/main/res/layout/data_not_found.xml" value="0.1" />
+        <entry key="..\:/Users/Rahmat Prastyo/AndroidStudioProjects/SubmissionDicoding/app/src/main/res/layout/empty_user.xml" value="0.2" />
         <entry key="..\:/Users/Rahmat Prastyo/AndroidStudioProjects/SubmissionDicoding/app/src/main/res/layout/fragment_followers.xml" value="0.1" />
         <entry key="..\:/Users/Rahmat Prastyo/AndroidStudioProjects/SubmissionDicoding/app/src/main/res/layout/fragment_following.xml" value="0.176" />
         <entry key="..\:/Users/Rahmat Prastyo/AndroidStudioProjects/SubmissionDicoding/app/src/main/res/layout/item_row_user.xml" value="0.4" />

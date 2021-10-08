@@ -11,7 +11,6 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
 import com.example.submissiondicoding.R
-import com.example.submissiondicoding.ui.ViewModelFactory
 import com.google.android.material.switchmaterial.SwitchMaterial
 
 

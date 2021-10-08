@@ -12,8 +12,6 @@ import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
 import com.bumptech.glide.Glide
-import com.example.submissiondicoding.network.ApiConfig
-import com.example.submissiondicoding.network.ResponseDetail
 import com.example.submissiondicoding.R
 import com.example.submissiondicoding.adapter.SectionsPagerAdapter
 import com.example.submissiondicoding.databinding.ActivityDetailUserBinding
@@ -21,6 +19,8 @@ import com.example.submissiondicoding.db.DatabaseContract
 import com.example.submissiondicoding.db.UserFavoriteHelper
 import com.example.submissiondicoding.helper.MappingHelper
 import com.example.submissiondicoding.model.User
+import com.example.submissiondicoding.network.ApiConfig
+import com.example.submissiondicoding.network.ResponseDetail
 import com.example.submissiondicoding.settings.SettingsActivity
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
@@ -41,7 +41,6 @@ class DetailUserActivity : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var username: String
     private lateinit var photo: String
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -64,8 +63,9 @@ class DetailUserActivity : AppCompatActivity(), View.OnClickListener {
         isFavorite = favoriteIsTrue
         if (isFavorite) {
             id = intent.getIntExtra(EXTRA_POSITION, -1)
-            val favorite: Int = R.drawable.ic_favorite
-            binding.favorite.setImageResource(favorite)
+
+            val favourite: Int = R.drawable.ic_favorite
+            binding.favorite.setImageResource(favourite)
         } else {
             val unFavorite: Int = R.drawable.ic_favorite_border
             binding.favorite.setImageResource(unFavorite)
@@ -74,7 +74,17 @@ class DetailUserActivity : AppCompatActivity(), View.OnClickListener {
         binding.favorite.setOnClickListener(this)
 
         endpointDetailUser(username)
-        viewPagerAdapterConfig()
+
+        //followers_dan_following
+        val sectionsPagerAdapter = SectionsPagerAdapter(this)
+        val viewPager: ViewPager2 = findViewById(R.id.view_pager)
+        viewPager.adapter = sectionsPagerAdapter
+        val tabs: TabLayout = findViewById(R.id.tabs)
+        TabLayoutMediator(tabs, viewPager) { tab, position ->
+            tab.text = resources.getString(TAB_TITLES[position])
+        }.attach()
+
+        supportActionBar?.elevation = 0f
 
     }
 
@@ -93,7 +103,6 @@ class DetailUserActivity : AppCompatActivity(), View.OnClickListener {
                 val result = usersFavoriteHelper.deleteById(id.toString()).toLong()
 
                 if (result > 0) {
-
                     Toast.makeText(
                         this@DetailUserActivity,
                         "Un Favorite",
@@ -106,8 +115,7 @@ class DetailUserActivity : AppCompatActivity(), View.OnClickListener {
                         Toast.LENGTH_SHORT
                     ).show()
                 }
-            }
-            else {
+            } else {
                 binding.favorite.setImageResource(favorite)
                 isFavorite = true
 
@@ -134,18 +142,6 @@ class DetailUserActivity : AppCompatActivity(), View.OnClickListener {
             }
             usersFavoriteHelper.close()
         }
-    }
-
-    private fun viewPagerAdapterConfig() {
-        val sectionsPagerAdapter = SectionsPagerAdapter(this)
-        val viewPager: ViewPager2 = findViewById(R.id.view_pager)
-        viewPager.adapter = sectionsPagerAdapter
-        val tabs: TabLayout = findViewById(R.id.tabs)
-        TabLayoutMediator(tabs, viewPager) { tab, position ->
-            tab.text = resources.getString(TAB_TITLES[position])
-        }.attach()
-
-        supportActionBar?.elevation = 0f
     }
 
 

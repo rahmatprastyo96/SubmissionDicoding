@@ -21,10 +21,9 @@ import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 
 class FavoriteActivity : AppCompatActivity() {
-
     private lateinit var binding: ActivityFavoriteBinding
-    private lateinit var adapter: FavoriteAdapter
 
+    private lateinit var adapter: FavoriteAdapter
     private lateinit var rvUsersFavorite: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -61,7 +60,9 @@ class FavoriteActivity : AppCompatActivity() {
             if (favorite.size > 0) {
                 adapter = FavoriteAdapter(favorite)
                 rvUsersFavorite.adapter = adapter
+                binding.dataNotFound.root.visibility = View.INVISIBLE
             } else {
+                binding.dataNotFound.root.visibility = View.VISIBLE
                 Log.d(TAG, "Tidak ada data saat ini")
             }
             favoriteHelper.close()

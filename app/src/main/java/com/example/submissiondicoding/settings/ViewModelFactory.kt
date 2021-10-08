@@ -1,9 +1,7 @@
-package com.example.submissiondicoding.ui
+package com.example.submissiondicoding.settings
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.submissiondicoding.settings.SettingPreferences
-import com.example.submissiondicoding.settings.SettingViewModel
 
 class ViewModelFactory(private val pref: SettingPreferences) : ViewModelProvider.NewInstanceFactory() {
 

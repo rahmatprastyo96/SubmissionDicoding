@@ -13,6 +13,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.submissiondicoding.databinding.ActivitySplashBinding
 import com.example.submissiondicoding.settings.SettingPreferences
 import com.example.submissiondicoding.settings.SettingViewModel
+import com.example.submissiondicoding.settings.ViewModelFactory
 
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 

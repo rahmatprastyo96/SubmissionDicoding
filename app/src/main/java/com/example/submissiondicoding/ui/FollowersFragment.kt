@@ -36,8 +36,6 @@ class FollowersFragment : Fragment() {
     private val listUser = ArrayList<User>()
     private lateinit var adapter: ListUserAdapter
 
-
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         adapter = ListUserAdapter(listUser)
