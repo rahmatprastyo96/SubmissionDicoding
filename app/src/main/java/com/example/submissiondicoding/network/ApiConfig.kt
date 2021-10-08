@@ -1,4 +1,4 @@
-package com.example.submissiondicoding.Network
+package com.example.submissiondicoding.network
 
 import com.example.submissiondicoding.BuildConfig
 import okhttp3.OkHttpClient

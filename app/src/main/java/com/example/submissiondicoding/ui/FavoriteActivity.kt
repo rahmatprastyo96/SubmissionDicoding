@@ -1,17 +1,21 @@
 package com.example.submissiondicoding.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.submissiondicoding.R
 import com.example.submissiondicoding.adapter.FavoriteAdapter
 import com.example.submissiondicoding.databinding.ActivityFavoriteBinding
 import com.example.submissiondicoding.db.UserFavoriteHelper
 import com.example.submissiondicoding.helper.MappingHelper
+import com.example.submissiondicoding.settings.SettingsActivity
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
@@ -53,42 +57,34 @@ class FavoriteActivity : AppCompatActivity() {
 
             binding.progressBarUsersFavorite.visibility = View.INVISIBLE
             val favorite = deferredNotes.await()
+
             if (favorite.size > 0) {
                 adapter = FavoriteAdapter(favorite)
                 rvUsersFavorite.adapter = adapter
-
-//                adapter.setOnItemClickCallback(object :
-//                    FavoriteAdapter.OnItemClickCallback {
-//                    override fun onItemClicked(data: UserFavorite) {
-//                        val intent =
-//                            Intent(this@FavoriteActivity, DetailUserActivity::class.java)
-//                        intent.putExtra(DetailUserActivity.USER_DATA, data.username)
-//                        startActivity(intent)
-//                        Toast.makeText(
-//                            this@FavoriteActivity,
-//                            "${data.username}",
-//                            Toast.LENGTH_SHORT
-//                        ).show()
-//                    }
-//                })
-
             } else {
                 Log.d(TAG, "Tidak ada data saat ini")
             }
-
             favoriteHelper.close()
         }
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.settings_menu, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
+        when (item.itemId) {
             android.R.id.home -> {
-                //Write your logic here
-                finish()
-                true
+                val moveIntent = Intent(this@FavoriteActivity, MainActivity::class.java)
+                startActivity(moveIntent)
             }
-            else -> super.onOptionsItemSelected(item)
+            R.id.action_settings -> {
+                val moveIntent = Intent(this@FavoriteActivity, SettingsActivity::class.java)
+                startActivity(moveIntent)
+            }
         }
+        return super.onOptionsItemSelected(item)
     }
 
     companion object {

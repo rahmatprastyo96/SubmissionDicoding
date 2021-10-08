@@ -39,7 +39,7 @@ class ListUserAdapter(private val listUser: ArrayList<User>) : RecyclerView.Adap
 
     override fun getItemCount(): Int = listUser.size
 
-    class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
+    inner class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         private val binding = ItemRowUserBinding.bind(itemView)
             var imgPhoto: CircleImageView = binding.imgItemPhoto
             var txtUsername: TextView = binding.tvItemUsername

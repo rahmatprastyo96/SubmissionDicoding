@@ -24,7 +24,7 @@
         android:id="@+id/rvUsersFollowing"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         tools:listitem="@layout/item_row_user"/>
 
 </FrameLayout>

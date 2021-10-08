@@ -10,8 +10,8 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.submissiondicoding.BuildConfig
 import com.example.submissiondicoding.ui.DetailUserActivity.Companion.USER_DATA
-import com.example.submissiondicoding.Network.ApiConfig
-import com.example.submissiondicoding.Network.ResponseDetail
+import com.example.submissiondicoding.network.ApiConfig
+import com.example.submissiondicoding.network.ResponseDetail
 import com.example.submissiondicoding.adapter.ListUserAdapter
 import com.example.submissiondicoding.databinding.FragmentFollowersBinding
 import com.example.submissiondicoding.model.User
@@ -61,8 +61,8 @@ class FollowersFragment : Fragment() {
     }
 
     private fun getDataUser() {
-        val dataUser = requireActivity().intent.getParcelableExtra<User>(USER_DATA) as User
-        endpointListFollowers(dataUser.username.toString())
+        val username = requireActivity().intent.getStringExtra(USER_DATA).toString()
+        endpointListFollowers(username)
     }
 
     //LoopJ

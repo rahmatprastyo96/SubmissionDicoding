@@ -16,16 +16,11 @@ import de.hdodenhof.circleimageview.CircleImageView
 import java.util.ArrayList
 
 class FavoriteAdapter(private val listUser: ArrayList<UserFavorite>) : RecyclerView.Adapter<FavoriteAdapter.FavoriteViewHolder>() {
-//    private lateinit var onItemClickCallback: FavoriteAdapter.OnItemClickCallback
-//
-//    fun setOnItemClickCallback(onItemClickCallback: FavoriteAdapter.OnItemClickCallback) {
-//        this.onItemClickCallback = onItemClickCallback
-//    }
-//
-//    fun addItem(favorite: UserFavorite) {
-//        this.listUser.add(favorite)
-//        notifyItemInserted(this.listUser.size - 1)
-//    }
+
+    fun addItem(favorite: UserFavorite) {
+        this.listUser.add(favorite)
+        notifyItemInserted(this.listUser.size - 1)
+    }
 
     fun updateItem(position: Int, favorite: UserFavorite) {
         this.listUser[position] = favorite
@@ -44,7 +39,7 @@ class FavoriteAdapter(private val listUser: ArrayList<UserFavorite>) : RecyclerV
     }
 
     override fun onBindViewHolder(holder: FavoriteViewHolder, position: Int) {
-        val (position, username, photo) = listUser[position]
+        val (id, username, photo) = listUser[position]
 
         holder.txtUsername.text = StringBuilder("Username: \n").append(username)
         Glide.with(holder.itemView.context)
@@ -52,10 +47,10 @@ class FavoriteAdapter(private val listUser: ArrayList<UserFavorite>) : RecyclerV
             .apply(RequestOptions().override(250, 250))
             .into(holder.imgPhoto)
 
-
         holder.itemView.setOnClickListener {
             val intent = Intent(it.context, DetailUserActivity::class.java)
             intent.putExtra(DetailUserActivity.USER_DATA, username)
+            intent.putExtra(DetailUserActivity.EXTRA_POSITION, id)
             it.context.startActivity(intent)
         }
 
@@ -69,7 +64,4 @@ class FavoriteAdapter(private val listUser: ArrayList<UserFavorite>) : RecyclerV
 
     }
 
-//    interface OnItemClickCallback {
-//        fun onItemClicked(data: UserFavorite)
-//    }
 }

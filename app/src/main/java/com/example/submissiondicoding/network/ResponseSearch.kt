@@ -1,4 +1,4 @@
-package com.example.submissiondicoding.Network
+package com.example.submissiondicoding.network
 
 import com.google.gson.annotations.SerializedName
 

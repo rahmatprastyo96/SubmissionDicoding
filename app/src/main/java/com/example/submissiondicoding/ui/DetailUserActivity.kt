@@ -1,8 +1,10 @@
 package com.example.submissiondicoding.ui
 
 import android.content.ContentValues
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
@@ -10,8 +12,8 @@ import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
 import com.bumptech.glide.Glide
-import com.example.submissiondicoding.Network.ApiConfig
-import com.example.submissiondicoding.Network.ResponseDetail
+import com.example.submissiondicoding.network.ApiConfig
+import com.example.submissiondicoding.network.ResponseDetail
 import com.example.submissiondicoding.R
 import com.example.submissiondicoding.adapter.SectionsPagerAdapter
 import com.example.submissiondicoding.databinding.ActivityDetailUserBinding
@@ -19,6 +21,7 @@ import com.example.submissiondicoding.db.DatabaseContract
 import com.example.submissiondicoding.db.UserFavoriteHelper
 import com.example.submissiondicoding.helper.MappingHelper
 import com.example.submissiondicoding.model.User
+import com.example.submissiondicoding.settings.SettingsActivity
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import retrofit2.Call
@@ -31,7 +34,7 @@ class DetailUserActivity : AppCompatActivity(), View.OnClickListener {
 
     private val listData = ArrayList<User>()
 
-    private var position: Int? = null
+    private var id: Int? = null
     private lateinit var usersFavoriteHelper: UserFavoriteHelper
     private var isFavorite: Boolean = false
     private var favoriteIsTrue: Boolean = false
@@ -47,12 +50,11 @@ class DetailUserActivity : AppCompatActivity(), View.OnClickListener {
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        val dataUser = intent.getParcelableExtra<User>(USER_DATA) as User
-        username = dataUser.username.toString()
+        username  = intent.getStringExtra(USER_DATA).toString()
 
         val favoriteHelper = UserFavoriteHelper.getInstance(applicationContext)
         favoriteHelper.open()
-        val cursor = favoriteHelper.queryByName(username)
+        val cursor = favoriteHelper.queryByUsername(username)
         val favorite =  MappingHelper.mapCursorToArrayList(cursor)
         if (favorite.size > 0) {
             favoriteIsTrue = true
@@ -61,7 +63,7 @@ class DetailUserActivity : AppCompatActivity(), View.OnClickListener {
 
         isFavorite = favoriteIsTrue
         if (isFavorite) {
-            position = intent.getIntExtra(EXTRA_POSITION, -1)
+            id = intent.getIntExtra(EXTRA_POSITION, -1)
             val favorite: Int = R.drawable.ic_favorite
             binding.favorite.setImageResource(favorite)
         } else {
@@ -88,7 +90,7 @@ class DetailUserActivity : AppCompatActivity(), View.OnClickListener {
                 binding.favorite.setImageResource(unFavorite)
                 isFavorite = false
 
-                val result = usersFavoriteHelper.deleteById(position.toString()).toLong()
+                val result = usersFavoriteHelper.deleteById(id.toString()).toLong()
 
                 if (result > 0) {
 
@@ -116,7 +118,7 @@ class DetailUserActivity : AppCompatActivity(), View.OnClickListener {
                 val result = usersFavoriteHelper.insert(values)
 
                 if (result > 0) {
-                    position = result.toInt()
+                    id = result.toInt()
                     Toast.makeText(
                         this@DetailUserActivity,
                         "Favorite",
@@ -196,15 +198,24 @@ class DetailUserActivity : AppCompatActivity(), View.OnClickListener {
         })
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.settings_menu, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
+        when (item.itemId) {
             android.R.id.home -> {
                 //Write your logic here
                 finish()
                 true
             }
-            else -> super.onOptionsItemSelected(item)
+            R.id.action_settings -> {
+                val moveIntent = Intent(this@DetailUserActivity, SettingsActivity::class.java)
+                startActivity(moveIntent)
+            }
         }
+        return super.onOptionsItemSelected(item)
     }
 
     companion object{

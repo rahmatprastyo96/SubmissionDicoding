@@ -8,7 +8,7 @@ plugins {
 android {
 
     defaultConfig {
-        buildConfigField("String", "KEY", '"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"')
+        buildConfigField("String", "KEY", '"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"')
     }
 
     compileSdk 30

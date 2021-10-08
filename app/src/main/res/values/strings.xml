@@ -20,5 +20,6 @@
     <string name="favorite_user">User Favorite</string>
     <string name="menu_settings">Settings</string>
     <string name="dark_mode">Dark Mode</string>
+    <string name="todo">TODO</string>
 
 </resources>

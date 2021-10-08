@@ -8,8 +8,9 @@
         <entry key="..\:/Users/Rahmat Prastyo/AndroidStudioProjects/SubmissionDicoding/app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.1" />
         <entry key="..\:/Users/Rahmat Prastyo/AndroidStudioProjects/SubmissionDicoding/app/src/main/res/drawable/ic_favorite_border.xml" value="0.1" />
         <entry key="..\:/Users/Rahmat Prastyo/AndroidStudioProjects/SubmissionDicoding/app/src/main/res/drawable/ic_favorite_white.xml" value="0.1" />
+        <entry key="..\:/Users/Rahmat Prastyo/AndroidStudioProjects/SubmissionDicoding/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="..\:/Users/Rahmat Prastyo/AndroidStudioProjects/SubmissionDicoding/app/src/main/res/drawable/ic_search.xml" value="0.14635416666666667" />
-        <entry key="..\:/Users/Rahmat Prastyo/AndroidStudioProjects/SubmissionDicoding/app/src/main/res/layout/activity_detail_user.xml" value="0.1" />
+        <entry key="..\:/Users/Rahmat Prastyo/AndroidStudioProjects/SubmissionDicoding/app/src/main/res/layout/activity_detail_user.xml" value="0.2" />
         <entry key="..\:/Users/Rahmat Prastyo/AndroidStudioProjects/SubmissionDicoding/app/src/main/res/layout/activity_favorite.xml" value="0.18958333333333333" />
         <entry key="..\:/Users/Rahmat Prastyo/AndroidStudioProjects/SubmissionDicoding/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/Rahmat Prastyo/AndroidStudioProjects/SubmissionDicoding/app/src/main/res/layout/activity_settings.xml" value="0.264" />
@@ -21,6 +22,7 @@
         <entry key="..\:/Users/Rahmat Prastyo/AndroidStudioProjects/SubmissionDicoding/app/src/main/res/menu/favorite_menu.xml" value="0.1734375" />
         <entry key="..\:/Users/Rahmat Prastyo/AndroidStudioProjects/SubmissionDicoding/app/src/main/res/menu/main_menu.xml" value="0.23854166666666668" />
         <entry key="..\:/Users/Rahmat Prastyo/AndroidStudioProjects/SubmissionDicoding/app/src/main/res/menu/menu_home.xml" value="0.1" />
+        <entry key="..\:/Users/Rahmat Prastyo/AndroidStudioProjects/SubmissionDicoding/app/src/main/res/menu/settings_menu.xml" value="0.23854166666666668" />
         <entry key="..\:/Users/Rahmat Prastyo/AndroidStudioProjects/SubmissionDicoding/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
       </map>
     </option>

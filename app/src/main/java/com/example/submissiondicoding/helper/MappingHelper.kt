@@ -10,7 +10,7 @@ object MappingHelper {
         val userList = ArrayList<UserFavorite>()
         notesCursor?.apply {
             while (moveToNext()) {
-                val id = getInt(getColumnIndexOrThrow(DatabaseContract.UserColumns._ID))
+                val id = getInt(getColumnIndexOrThrow(DatabaseContract.UserColumns.ID))
                 val photo = getString(getColumnIndexOrThrow(DatabaseContract.UserColumns.PHOTO))
                 val username = getString(getColumnIndexOrThrow(DatabaseContract.UserColumns.USERNAME))
                 userList.add(UserFavorite(id, username, photo))

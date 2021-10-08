@@ -12,9 +12,9 @@ import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.submissiondicoding.Network.ApiConfig
-import com.example.submissiondicoding.Network.ResponseDetail
-import com.example.submissiondicoding.Network.ResponseSearch
+import com.example.submissiondicoding.network.ApiConfig
+import com.example.submissiondicoding.network.ResponseDetail
+import com.example.submissiondicoding.network.ResponseSearch
 import com.example.submissiondicoding.R
 import com.example.submissiondicoding.settings.SettingsActivity
 import com.example.submissiondicoding.adapter.ListUserAdapter
@@ -105,7 +105,7 @@ class MainActivity : AppCompatActivity() {
                 override fun onItemClicked(data: User) {
                     val intent =
                         Intent(this@MainActivity, DetailUserActivity::class.java)
-                    intent.putExtra(DetailUserActivity.USER_DATA, data)
+                    intent.putExtra(DetailUserActivity.USER_DATA, data.username)
                     startActivity(intent)
                     Toast.makeText(
                         this@MainActivity,
