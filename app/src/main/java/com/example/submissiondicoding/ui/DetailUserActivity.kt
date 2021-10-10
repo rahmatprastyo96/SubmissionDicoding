@@ -144,7 +144,6 @@ class DetailUserActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-
     //Retrofit
     private fun endpointDetailUser(usernameGithub: String) {
         val client = ApiConfig.getApiService().userDetail(usernameGithub)
@@ -202,9 +201,15 @@ class DetailUserActivity : AppCompatActivity(), View.OnClickListener {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             android.R.id.home -> {
-                //Write your logic here
-                finish()
-                true
+                if(isFavorite) {
+                    //Write your logic here
+                    finish()
+                    true
+                }else{
+                    val moveIntent = Intent(this@DetailUserActivity, MainActivity::class.java)
+                    startActivity(moveIntent)
+                }
+
             }
             R.id.action_settings -> {
                 val moveIntent = Intent(this@DetailUserActivity, SettingsActivity::class.java)
